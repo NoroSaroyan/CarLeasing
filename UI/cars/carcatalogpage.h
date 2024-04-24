@@ -2,7 +2,7 @@
 #define CARCATALOGPAGE_H
 
 #include <QtWidgets>
-#include "../../../Entities/car/Car.h"
+#include "../../Entities/car/Car.h"
 
 class CarCatalogPage : public QMainWindow {
 Q_OBJECT

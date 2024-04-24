@@ -5,6 +5,7 @@
 #include <QScrollBar>
 #include "iostream"
 #include "../static/header/headerwidget.h"
+#include "../../Entities/car/Car.h"
 #include <QVBoxLayout>
 
 
@@ -67,7 +68,7 @@ QWidget* CarCatalogPage::createCarCard(const Car& car) {
     cardWidget->setStyleSheet("background-color: #f0f0f0; border: 1px solid #ccc; margin: 10px;");
 
     // Load car image
-    QString imagePath = QString("/Users/noriksaroyan/CLionProjects/CarLeasingService/UI/photos/a4.jpeg").arg(car.getId());
+    QString imagePath = QString("/Users/noriksaroyan/CLionProjects/CarLeasing/UI/static/img/x4.jpeg").arg(car.getId());
     QLabel *imageLabel = new QLabel(this);
     QPixmap image(imagePath);
     imageLabel->setPixmap(image.scaledToHeight(150, Qt::SmoothTransformation)); // Adjust image size

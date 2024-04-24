@@ -15,7 +15,6 @@ find_package(Qt5 COMPONENTS
 
 
 
-find_package(nlohmann_json 3.2.0 REQUIRED)
 add_library(foo
         Services/order/OrderService.cpp
         Services/car/CarService.h
@@ -34,8 +33,10 @@ add_library(foo
         UI/static/header/headerwidget.cpp
         UI/static/header/headerwidget.h
         UI/static/header/headerwidget.ui
+        UI/orders/qcarreservationdialog.cpp
+        UI/orders/qcarreservationdialog.h
+        UI/orders/qcarreservationdialog.ui
 )
-target_link_libraries(foo PRIVATE nlohmann_json::nlohmann_json)
 
 add_executable(untitled4 main.cpp
         Services/car/CarService.h
