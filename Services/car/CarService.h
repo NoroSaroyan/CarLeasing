@@ -3,6 +3,7 @@
 #include "sstream"
 #include <fstream>
 #include <iostream>
+
 using namespace std;
 
 class CarService {
@@ -17,11 +18,11 @@ private:
 
     Car getCarById(string id);
 
-    vector<Car> findAllByBrand(string brand);
+    vector<Car> findAllByBrand(QString brand);
 
-    vector<Car> findAllByModel(string brand);
+    vector<Car> findAllByModel(QString brand);
 
-    vector<Car> findAllByVolume(string brand);
+    vector<Car> findAllByVolume(QString brand);
 
 };
 

@@ -2,13 +2,13 @@
 #include <sstream>
 
 string CarMapper::mapObjectToString(const Car &car) {
-    std::string result = "Car ID: " + car.getId() + "\n";
-    result += "Brand: " + car.getBrand() + "\n";
-    result += "Model: " + car.getModel() + "\n";
-    result += "Volume: " + car.getVolume() + "\n";
-    result += "Body Type: " + string(toString(car.getBodyType())) + "\n";
+    string result = "Car ID: " + car.getId().toStdString() + "\n";
+    result += "Brand: " + car.getBrand().toStdString() + "\n";
+    result += "Model: " + car.getModel().toStdString() + "\n";
+    result += "Volume: " + car.getVolume().toStdString() + "\n";
+    result += "Body Type: " + to_string(car.getBodyType()) + "\n";
     result += "Transmission: " + string(toString(car.getTransmission())) + "\n";
-    result += "Rate: " + std::to_string(car.getRate()) + "\n";
+    result += "Rate: " + to_string(car.getRate()) + "\n";
     result += "Has Car Seat: " + string((car.isHasCarSeat() ? "Yes" : "No")) + "\n";
 
     return result;
@@ -49,7 +49,8 @@ Car CarMapper::mapStringToObject(const string &data) {
     double rate = stod(rateStr);
     bool hasCarSeat = (hasCarSeatStr == "Yes");
 
-    Car car(id, brand, model, volume, bodyType, transmission, hasCarSeat);
+    Car car(QString::fromStdString(id), QString::fromStdString(brand), QString::fromStdString(model),
+            QString::fromStdString(volume), bodyType, transmission, hasCarSeat);
 
     return car;
 }

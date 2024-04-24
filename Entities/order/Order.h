@@ -2,29 +2,28 @@
 #define OP_PROJ_CONSOLE_ORDER_H
 
 
-#include "string"
+#include "QString"
 #include "../car/Car.h"
 #include "ctime"
 #include "chrono"
 
 class Order {
 private:
-    std::string id;
+    QString id;
     tm startDate{};
     tm endDate{};
-    string carId;
-    string clientId;
+    QString carId;
+    QString clientId;
     double price{};
 public:
-    Order(std::string id, const tm &startDate,
-          const tm &endDate, string carId, string clientId,
-          double price);
-
     Order();
 
-    const string &getId() const;
+    Order(const QString &id, const tm &startDate, const tm &endDate, const QString &carId, const QString &clientId,
+          double price);
 
-    void setId(const string &id);
+    const QString &getId() const;
+
+    void setId(const QString &id);
 
     const tm &getStartDate() const;
 
@@ -34,13 +33,13 @@ public:
 
     void setEndDate(const tm &endDate);
 
-    const string &getCarId() const;
+    const QString &getCarId() const;
 
-    void setCarId(const std::string &carId);
+    void setCarId(const QString &carId);
 
-    const string &getClientId() const;
+    const QString &getClientId() const;
 
-    void setClientId(const string &clientId);
+    void setClientId(const QString &clientId);
 
     double getPrice() const;
 

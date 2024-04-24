@@ -6,12 +6,14 @@
 #define OP_PROJ_CONSOLE_TRANSMISSION_H
 
 #include "string"
+#include "QString"
 using namespace std;
 
 enum Transmission {
     MANUAL,
     AUTOMATIC,
-    VARIATOR
+    VARIATOR,
+    UNDEF
 };
 
 inline const char * toString(Transmission trsmn) {
@@ -23,18 +25,20 @@ inline const char * toString(Transmission trsmn) {
         case VARIATOR:
             return "VARIATOR";
         default:
-            return "[NAN]";
+            return "UNDEF";
     }
 }
 
 // string to transmission
-static Transmission stot(const string& str) {
+static Transmission stot(const QString& str) {
     if (str == "MANUAL") {
         return MANUAL;
     } else if (str == "AUTOMATIC") {
         return AUTOMATIC;
     } else if (str == "VARIATOR") {
         return VARIATOR;
+    }else{
+        return UNDEF;
     }
 }
 

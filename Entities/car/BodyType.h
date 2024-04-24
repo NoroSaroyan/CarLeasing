@@ -9,7 +9,8 @@ enum BodyType {
     CONVERTIBLE,
     SUV,
     TRUCK,
-    VAN
+    VAN,
+    UNDEFINED
 };
 inline const char *toString(BodyType bodyType) {
     switch (bodyType) {
@@ -28,11 +29,11 @@ inline const char *toString(BodyType bodyType) {
         case VAN:
             return "VAN";
         default:
-            return "[NAN]";
+            return "UNDISCLOSED";
     }
 }
 // string to body type converter
-inline const static BodyType stobt(const std::string& str) {
+inline const static BodyType stobt(const QString& str) {
     if (str == "SEDAN") {
         return SEDAN;
     } else if (str == "COUPE") {
@@ -47,6 +48,8 @@ inline const static BodyType stobt(const std::string& str) {
         return TRUCK;
     } else if (str == "VAN") {
         return VAN;
+    }else{
+        return UNDEFINED;
     }
 }
 

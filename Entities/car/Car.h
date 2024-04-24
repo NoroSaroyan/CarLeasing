@@ -4,14 +4,15 @@
 
 #include <ostream>
 #include "string"
+#include "QString"
 #include "BodyType.h"
 #include "Transmission.h"
 class Car {
 private:
-    std::string id;
-    std::string brand;
-    std::string model;
-    std::string volume;
+    QString id;
+    QString brand;
+    QString model;
+    QString volume;
     BodyType bodyType;
     Transmission transmission;
     double rate;
@@ -24,28 +25,26 @@ private:
     bool hasCarSeat;
 
 public:
-    Car(std::string id, std::string brand, std::string model, std::string volume, BodyType bodyType, Transmission transmission,
+    Car(QString id, QString brand, QString model, QString volume, BodyType bodyType, Transmission transmission,
         bool hasCarSeat);
-
-//    friend ostream &operator<<(ostream &os, const Car &car);
 
     Car();
 
-    const std::string &getId() const;
+    const QString &getId() const;
 
-    void setId(const std::string &id);
+    void setId(const QString &id);
 
-    const std::string &getBrand() const;
+    const QString &getBrand() const;
 
-    void setBrand(const std::string &brand);
+    void setBrand(const QString &brand);
 
-    const std::string &getModel() const;
+    const QString &getModel() const;
 
-    void setModel(const std::string &model);
+    void setModel(const QString &model);
 
-    const std::string &getVolume() const;
+    const QString &getVolume() const;
 
-    void setVolume(const std::string &volume);
+    void setVolume(const QString &volume);
 
     BodyType getBodyType() const;
 

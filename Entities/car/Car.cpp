@@ -1,33 +1,38 @@
 #include "Car.h"
-
 #include <utility>
 
-Car::Car(std::string id, std::string brand, std::string model, std::string volume, BodyType bodyType, Transmission transmission,
-         bool hasCarSeat) : id(std::move(id)), brand(std::move(brand)), model(std::move(model)), volume(std::move(volume)), bodyType(bodyType), transmission(transmission),
-                            hasCarSeat(hasCarSeat) {}
+Car::Car(QString id, QString brand, QString model, QString volume, BodyType bodyType, Transmission transmission,
+         bool hasCarSeat) {
+    this->setId(id);
+    this->setBrand(brand);
+    this->setVolume(volume);
+    this->setBodyType(bodyType);
+    this->setTransmission(transmission);
+    this->setHasCarSeat(hasCarSeat);
+}
 
-const std::string &Car::getBrand() const {
+const QString &Car::getBrand() const {
     return this->brand;
 }
 
 
-void Car::setBrand(const std::string &brand) {
+void Car::setBrand(const QString &brand) {
     this->brand = brand;
 }
 
-const std::string &Car::getModel() const {
+const QString &Car::getModel() const {
     return this->model;
 }
 
-void Car::setModel(const std::string &model) {
+void Car::setModel(const QString &model) {
     this->model = model;
 }
 
-const std::string &Car::getVolume() const {
+const QString &Car::getVolume() const {
     return volume;
 }
 
-void Car::setVolume(const std::string &volume) {
+void Car::setVolume(const QString &volume) {
     this->volume = volume;
 }
 
@@ -57,11 +62,11 @@ void Car::setHasCarSeat(bool hasCarSeat) {
 
 Car::Car() {}
 
-const std::string &Car::getId() const {
+const QString &Car::getId() const {
     return id;
 }
 
-void Car::setId(const std::string &id) {
+void Car::setId(const QString &id) {
     Car::id = id;
 }
 

@@ -26,8 +26,14 @@ add_library(foo
         mapper/car/CarMapper.h
         mapper/car/CarMapper.cpp
         mapper/order/OrderMapper.cpp
-        Entities/Person.h
-        Entities/Person.cpp
+        Entities/person/Person.h
+        Entities/person/Person.cpp
+        UI/cars/carcatalogpage.cpp
+        UI/cars/carcatalogpage.h
+        UI/cars/carcatalogpage.ui
+        UI/static/header/headerwidget.cpp
+        UI/static/header/headerwidget.h
+        UI/static/header/headerwidget.ui
 )
 target_link_libraries(foo PRIVATE nlohmann_json::nlohmann_json)
 
@@ -40,8 +46,14 @@ add_executable(untitled4 main.cpp
         mapper/car/CarMapper.h
         mapper/car/CarMapper.cpp
         mapper/order/OrderMapper.cpp
-        Entities/Person.h
-        Entities/Person.cpp
+        Entities/person/Person.h
+        Entities/person/Person.cpp
+        UI/cars/carcatalogpage.cpp
+        UI/cars/carcatalogpage.h
+        UI/cars/carcatalogpage.ui
+        UI/static/header/headerwidget.cpp
+        UI/static/header/headerwidget.h
+        UI/static/header/headerwidget.ui
 )
 target_link_libraries(untitled4
         Qt5::Core
